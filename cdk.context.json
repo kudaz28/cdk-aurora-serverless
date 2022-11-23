@@ -1,0 +1,38 @@
+{
+  "vpc-provider:account=636333088762:filter.tag:Name=honeycomb-dev-ticketing-vpc:region=eu-west-2:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-093254fc13248f03d",
+    "vpcCidrBlock": "10.0.0.0/16",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "isolated-",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-0fe11969f56b745e9",
+            "cidr": "10.0.0.0/20",
+            "availabilityZone": "eu-west-2a",
+            "routeTableId": "rtb-0d7b6b4684af7ddbd"
+          },
+          {
+            "subnetId": "subnet-0cc565fc6edfe1f35",
+            "cidr": "10.0.16.0/20",
+            "availabilityZone": "eu-west-2b",
+            "routeTableId": "rtb-0191bd9ff7aa0b1e3"
+          },
+          {
+            "subnetId": "subnet-0d401931b9f5d854c",
+            "cidr": "10.0.32.0/20",
+            "availabilityZone": "eu-west-2c",
+            "routeTableId": "rtb-0710b7cf4682254e5"
+          }
+        ]
+      }
+    ]
+  },
+  "availability-zones:account=636333088762:region=eu-west-2": [
+    "eu-west-2a",
+    "eu-west-2b",
+    "eu-west-2c"
+  ]
+}

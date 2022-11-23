@@ -4,6 +4,7 @@ import * as lambda from '@aws-cdk/aws-lambda';
 import * as rds from '@aws-cdk/aws-rds'; 
 import * as apigw from '@aws-cdk/aws-apigatewayv2';
 import * as integrations from '@aws-cdk/aws-apigatewayv2-integrations';
+import { Vpc } from '@aws-cdk/aws-ec2';
 
 export class CdkAuroraServerlessStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -11,6 +12,10 @@ export class CdkAuroraServerlessStack extends cdk.Stack {
 
     // Create the VPC needed for the Aurora Serverless DB cluster
     const vpc = new ec2.Vpc(this, 'AuroraVPC');
+
+    // const vpc = Vpc.fromLookup(this, `honeycomb-dev-ticketing-vpc`, {
+    //   vpcName: `honeycomb-dev-ticketing-vpc`,
+    // });
 
     // Create the Serverless Aurora DB cluster; set the engine to Postgres
     const cluster = new rds.ServerlessCluster(this, 'AuroraTestCluster', {
